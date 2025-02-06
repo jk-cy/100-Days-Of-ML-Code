@@ -19,8 +19,8 @@ Y = dataset.iloc[ : , 3].values
 ```
 ## Step 3: Handling the missing data
 ```python
-from sklearn.preprocessing import Imputer
-imputer = Imputer(missing_values = "NaN", strategy = "mean", axis = 0)
+from sklearn.preprocessing import SimpleImputer 
+imputer = SimpleImputer(missing_values=np.nan, strategy="mean") #Imputer class has been removed from scikit-learn (starting from version 0.22.0). The Imputer class was deprecated in earlier versions and has been replaced by the SimpleImputer class.
 imputer = imputer.fit(X[ : , 1:3])
 X[ : , 1:3] = imputer.transform(X[ : , 1:3])
 ```
